@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objednávka vozu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Objednávka vozu</h1>
+      <form id="orderForm">
+        <div class="brand-container">
+          <select id="brand" name="brand" required>
+            <option value="mercedes">Mercedes</option>
+            <option value="volvo">Volvo</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+          </select>
+          <span id="price" class="price-text">1 500 000 Kč</span>
+        </div>
+
+        <h3>Barva:</h3>
+        <div class="form-check">
+          <label for="base" class="form-check-label"
+            ><input
+              type="radio"
+              id="base"
+              name="color"
+              value="base"
+              class="form-check-input"
+              checked />
+            Základní barva <span id="basePrice"></span
+          ></label>
+        </div>
+        <div class="form-check">
+          <label for="burnished" class="form-check-label"
+            ><input
+              type="radio"
+              id="burnished"
+              name="color"
+              value="burnished"
+              class="form-check-input" />
+            Pálený lak +5%
+            <span id="burnishedPrice"></span
+          ></label>
+        </div>
+        <div class="form-check">
+          <label for="metallic" class="form-check-label"
+            ><input
+              type="radio"
+              id="metallic"
+              name="color"
+              value="metallic"
+              class="form-check-input" />
+            Metalická barva +7%
+            <span id="metallicPrice"></span
+          ></label>
+        </div>
+
+        <h3>Dodatečná výbava:</h3>
+        <div class="form-check">
+          <label for="cameras" class="form-check-label"
+            ><input
+              type="checkbox"
+              id="cameras"
+              name="equipment"
+              value="10000"
+              class="form-check-input"
+            />
+            Parkovací kamery (+10 000 Kč)</label
+          >
+        </div>
+        <div class="form-check">
+          <label for="wheels" class="form-check-label"
+            ><input
+              type="checkbox"
+              id="wheels"
+              name="equipment"
+              value="20000"
+              class="form-check-input"
+            />
+            Litá kola (+20 000 Kč)</label
+          >
+        </div>
+        <div class="form-check">
+          <label for="seats" class="form-check-label"
+            ><input
+              type="checkbox"
+              id="seats"
+              name="equipment"
+              value="50000"
+              class="form-check-input"
+            />
+            Kožené sedačky (+50 000 Kč)</label
+          >
+        </div>
+        <div class="form-check">
+          <label for="tuning" class="form-check-label"
+            ><input
+              type="checkbox"
+              id="tuning"
+              name="equipment"
+              value="0.20"
+              class="form-check-input"
+            />
+            Tuningová úprava (+20 % ze základní ceny vozu)</label
+          >
+        </div>
+
+        <label for="budget"><h3>Váš rozpočet na auto (Kč):</h3></label>
+        <input type="number" id="budget" name="budget" required />
+
+        <button type="button" id="rozpocetKontrola" onclick="vypocitatCenu()">
+          Spočítat cenu a rozpočet
+        </button>
+
+        <p id="total" class="price-text">Celková cena:</p>
+
+        <p id="rozpocet" class="budget-text"></p>
+
+        <label for="email">Kontaktní email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <button type="submit">Odeslat</button>
+      </form>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
